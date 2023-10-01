@@ -18,7 +18,8 @@
 }
 
 .Weather img {
-  float: left;
+  position: relative;
+  top: -16px;
   margin-right: 10px;
 }
 

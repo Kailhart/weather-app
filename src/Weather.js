@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Weather.css";
+import DateLine from "./DateLine";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const defaultCity ="Berlin";
+  const defaultCity = "Berlin";
 
   function handleResponse(response) {
     setWeatherData({
@@ -16,7 +17,7 @@ export default function Weather() {
       humid: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       iconUrl: response.data.condition.icon_url,
-      date: "Wednesday 07:00",
+      date: new Date(response.data.time * 1000),
       city: response.data.city,
     });
   }
@@ -45,7 +46,9 @@ export default function Weather() {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <DateLine date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.descr}</li>
         </ul>
         <div className="row mt-3">
