@@ -17,12 +17,6 @@
   margin-top: 20px;
 }
 
-.Weather img {
-  position: relative;
-  top: -16px;
-  margin-right: 10px;
-}
-
 .Weather .temperature {
   font-weight: 400;
   font-size: 64px;

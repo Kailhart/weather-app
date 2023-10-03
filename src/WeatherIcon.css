@@ -1,0 +1,9 @@
+.WeatherIcon {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.WeatherIcon img {
+  margin-right: 10px;
+  width: 64px;
+}
