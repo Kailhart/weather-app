@@ -2,8 +2,12 @@
   text-align: center;
 }
 
-.Forecast .day {
+.Forecast .Weekday h3 {
   font-size: 24px;
+}
+
+.Forecast .Weekday p {
+  font-size: 16px;
 }
 
 .Forecast .WeatherIcon img {

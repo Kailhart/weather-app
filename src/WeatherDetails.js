@@ -41,7 +41,13 @@ export default function WeatherDetails(props) {
             <li>Wind: {props.data.wind} km/h</li>
           </ul>
         </div>
-        <Forecast data={props.data} day={"0"} units={unit} />
+        <div className="row">
+          <Forecast data={props.data} day={"0"} units={unit} />
+          <Forecast data={props.data} day={"1"} units={unit} />
+          <Forecast data={props.data} day={"2"} units={unit} />
+          <Forecast data={props.data} day={"3"} units={unit} />
+          <Forecast data={props.data} day={"4"} units={unit} />
+        </div>
       </div>
     );
   } else {
@@ -64,7 +70,13 @@ export default function WeatherDetails(props) {
             <li>Wind: {props.data.wind} km/h</li>
           </ul>
         </div>
-        <Forecast data={props.data} day={"0"} units={unit}/>
+        <div className="row">
+          <Forecast data={props.data} day={"0"} units={unit} />
+          <Forecast data={props.data} day={"1"} units={unit} />
+          <Forecast data={props.data} day={"2"} units={unit} />
+          <Forecast data={props.data} day={"3"} units={unit} />
+          <Forecast data={props.data} day={"4"} units={unit} />
+        </div>
       </div>
     );
   }
