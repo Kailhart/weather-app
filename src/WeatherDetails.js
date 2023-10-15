@@ -42,11 +42,7 @@ export default function WeatherDetails(props) {
           </ul>
         </div>
         <div className="row">
-          <Forecast data={props.data} day={"0"} units={unit} />
-          <Forecast data={props.data} day={"1"} units={unit} />
-          <Forecast data={props.data} day={"2"} units={unit} />
-          <Forecast data={props.data} day={"3"} units={unit} />
-          <Forecast data={props.data} day={"4"} units={unit} />
+          <Forecast data={props.data} units={unit} />
         </div>
       </div>
     );
@@ -71,11 +67,7 @@ export default function WeatherDetails(props) {
           </ul>
         </div>
         <div className="row">
-          <Forecast data={props.data} day={"0"} units={unit} />
-          <Forecast data={props.data} day={"1"} units={unit} />
-          <Forecast data={props.data} day={"2"} units={unit} />
-          <Forecast data={props.data} day={"3"} units={unit} />
-          <Forecast data={props.data} day={"4"} units={unit} />
+          <Forecast data={props.data} units={unit} />
         </div>
       </div>
     );
