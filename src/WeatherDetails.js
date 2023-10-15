@@ -48,27 +48,27 @@ export default function WeatherDetails(props) {
     );
   } else {
     return (
-      <div className="WeatherDetails row mt-3">
-        <div className="col-6">
-          <WeatherIcon data={props.data} />
-          <span className="temperature">{convert(props.data.temp)}</span>
-          <span className="temp-unit">
-            <a href="#" onClick={showCels}>
-              °C
-            </a>{" "}
-            | °F
-          </span>
-        </div>
-        <div className="col-6">
-          <ul>
-            <li>Feels like: {convert(props.data.feelsLike)}°F</li>
-            <li>Humidity: {props.data.humid}%</li>
-            <li>Wind: {props.data.wind} km/h</li>
-          </ul>
-        </div>
-        <div className="row">
-          <Forecast data={props.data} units={unit} />
-        </div>
+      <div className="WeatherDetails">
+        <row className="mt-3 row">
+          <div className="col-6">
+            <WeatherIcon data={props.data} />
+            <span className="temperature">{convert(props.data.temp)}</span>
+            <span className="temp-unit">
+              <a href="#" onClick={showCels}>
+                °C
+              </a>{" "}
+              | °F
+            </span>
+          </div>
+          <div className="col-6">
+            <ul>
+              <li>Feels like: {convert(props.data.feelsLike)}°F</li>
+              <li>Humidity: {props.data.humid}%</li>
+              <li>Wind: {props.data.wind} km/h</li>
+            </ul>
+          </div>
+        </row>
+        <Forecast data={props.data} units={unit} />
       </div>
     );
   }

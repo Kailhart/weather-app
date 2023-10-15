@@ -6,11 +6,11 @@ import Weekday from "./Weekday";
 export default function ForecastDay(props) {
   let units = props.units;
   let forecastData = {
-    tempMax: Math.round(props.data.temperature.maximum),
-    tempMin: Math.round(props.data.temperature.minimum),
-    descr: props.data.condition.description,
-    icon: props.data.condition.icon,
-    time: new Date(props.data.time * 1000),
+    tempMax: Math.round(props.data.temp.max),
+    tempMin: Math.round(props.data.temp.min),
+    descr: props.data.weather[0].description,
+    icon: props.data.weather[0].icon,
+    time: new Date(props.data.dt * 1000),
   };
 
   function convert(temp) {

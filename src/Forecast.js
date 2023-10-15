@@ -6,7 +6,6 @@ import "./Forecast.css";
 import ForecastDay from "./ForecastDay";
 
 export default function Forecast(props) {
-  let city = props.data.city;
   const [forecastReady, setForecastReady] = useState(false);
   const [forecastData, setForecastData] = useState();
 
@@ -20,15 +19,17 @@ export default function Forecast(props) {
   }
 
   function getForecast() {
-    let apiKey = "42c1087f21a779atb0e02f0o78c49337";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    let apiKey = "96771e971243152d6b8948878c26adde";
+    let lat = props.data.lat;
+    let lon = props.data.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly,current&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
   if (forecastReady) {
     return (
       <div className="Forecast">
-        <div className="row mt-3">
+        <div className="row mt-3 m-0-auto">
           {forecastData.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
