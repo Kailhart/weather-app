@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 
 import WeatherIcon from "./WeatherIcon";
+import Forecast from "./Forecast";
 
 export default function WeatherDetails(props) {
-  const [unit, setUnit] = useState("celsius");
+  const [unit, setUnit] = useState("metric");
 
   function showCels(event) {
     event.preventDefault();
-    setUnit("celsius");
+    setUnit("metric");
   }
 
   function showFahr(event) {
     event.preventDefault();
-    setUnit("fahrenheit");
+    setUnit("imperial");
   }
 
   function convert(temp) {
@@ -20,9 +21,9 @@ export default function WeatherDetails(props) {
     return tempFahr;
   }
 
-  if (unit === "celsius") {
+  if (unit === "metric") {
     return (
-      <div className="WeatherDetails row">
+      <div className="WeatherDetails row mt-3">
         <div className="col-6">
           <WeatherIcon data={props.data} />
           <span className="temperature">{props.data.temp}</span>
@@ -40,11 +41,12 @@ export default function WeatherDetails(props) {
             <li>Wind: {props.data.wind} km/h</li>
           </ul>
         </div>
+        <Forecast data={props.data} day={"0"} units={unit} />
       </div>
     );
   } else {
     return (
-      <div className="WeatherDetails row">
+      <div className="WeatherDetails row mt-3">
         <div className="col-6">
           <WeatherIcon data={props.data} />
           <span className="temperature">{convert(props.data.temp)}</span>
@@ -62,6 +64,7 @@ export default function WeatherDetails(props) {
             <li>Wind: {props.data.wind} km/h</li>
           </ul>
         </div>
+        <Forecast data={props.data} day={"0"} units={unit}/>
       </div>
     );
   }

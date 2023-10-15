@@ -1,0 +1,21 @@
+.Forecast {
+  text-align: center;
+}
+
+.Forecast .day {
+  font-size: 24px;
+}
+
+.Forecast .WeatherIcon img {
+  margin: 0;
+  width: 50px;
+}
+
+.Forecast .temp-max {
+  border-bottom: solid 2px #00000075;
+  margin-top: 20px;
+}
+
+.Forecast .temp-min {
+  opacity: 0.7;
+}

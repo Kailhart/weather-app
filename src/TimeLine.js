@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DateLine(props) {
+export default function TimeLine(props) {
   let days = [
     "Sunday",
     "Monday",
