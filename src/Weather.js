@@ -35,7 +35,7 @@ export default function Weather() {
     search();
   }
 
-  function handleCityChange(event) {
+  function handleInputChange(event) {
     setCity(event.target.value);
   }
 
@@ -50,7 +50,7 @@ export default function Weather() {
                 placeholder="Enter a city..."
                 className="form-control"
                 autoFocus="on"
-                onChange={handleCityChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="col-3">
