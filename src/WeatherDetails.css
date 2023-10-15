@@ -1,0 +1,64 @@
+.WeatherDetails .current {
+  background: var(--shade-color);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.WeatherDetails h1 {
+  font-size: 36px;
+  line-height: 29px;
+  color: var(--prime-color);
+}
+
+.WeatherDetails .temp-line {
+  text-align: right;
+}
+
+.WeatherDetails .temperature {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+  color: var(--prime-color);
+}
+
+.WeatherDetails .temp-unit {
+  color: var(--prime-color);
+  font-size: 32px;
+  font-weight: 400;
+  vertical-align: top;
+  margin-left: 5px;
+  line-height: 1;
+}
+
+.WeatherDetails .temp-unit .left {
+  border-radius: 8px 0 0 8px;
+  padding: 8px;
+}
+
+.WeatherDetails .temp-unit .right {
+  border-radius: 0 8px 8px 0;
+  padding: 8px 10px;
+}
+
+.WeatherDetails .temp-unit #active {
+  background-color: var(--shade-color);
+  color: var(--prime-color);
+  transition: all 200ms ease-in-out;
+}
+
+.WeatherDetails .temp-unit a {
+  background-color: var(--light-color);
+  color: #fff;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+.WeatherDetails .temp-unit:hover #active {
+  background-color: var(--light-color);
+  color: #fff;
+}
+
+.WeatherDetails .temp-unit:hover a {
+  background-color: var(--shade-color);
+  color: var(--prime-color);
+}

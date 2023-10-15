@@ -1,12 +1,12 @@
 .Forecast {
-  text-align: center;
+    text-align: center;
 }
 
-.Forecast .Weekday h3 {
+.Weekday h3 {
   font-size: 24px;
 }
 
-.Forecast .Weekday p {
+.Weekday p {
   font-size: 16px;
 }
 
@@ -22,4 +22,11 @@
 
 .Forecast .temp-min {
   opacity: 0.7;
+}
+
+.ForecastDay {
+
+  background: var(--shade-color);
+  border-radius: 16px;
+  padding: 8px 16px;
 }

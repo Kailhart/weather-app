@@ -11,5 +11,5 @@
 }
 
 .App footer a {
-  color: #000;
+  color: var(--prime-color);
 }

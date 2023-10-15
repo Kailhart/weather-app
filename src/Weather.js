@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Weather.css";
-import TimeLine from "./TimeLine";
 import WeatherDetails from "./WeatherDetails";
 
 export default function Weather() {
@@ -46,11 +45,11 @@ export default function Weather() {
       <div className="Weather">
         <form id="search-form" onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-9 pe-0">
               <input
                 type="search"
                 placeholder="Enter a city..."
-                className="form-control"
+                className="form-control search-field"
                 autoFocus="on"
                 onChange={handleInputChange}
               />
@@ -59,18 +58,11 @@ export default function Weather() {
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="search-btn btn w-100"
               />
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>
-            <TimeLine date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">{weatherData.descr}</li>
-        </ul>
         <WeatherDetails data={weatherData} />
       </div>
     );

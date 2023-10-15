@@ -20,7 +20,7 @@ export default function ForecastDay(props) {
 
   if (units === "metric") {
     return (
-      <div className="Forecast">
+      <div className="ForecastDay">
         <Weekday time={forecastData.time} />
         <WeatherIcon data={forecastData} />
         <div className="temp-max">{forecastData.tempMax}°C</div>
@@ -29,7 +29,7 @@ export default function ForecastDay(props) {
     );
   } else {
     return (
-      <div className="Forecast">
+      <div className="ForecastDay">
         <Weekday time={forecastData.time} />
         <WeatherIcon data={forecastData} />
         <div className="temp-max">{convert(forecastData.tempMax)}°F</div>

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import "./WeatherDetails.css";
+
+import TimeLine from "./TimeLine";
 import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
 
@@ -23,51 +26,73 @@ export default function WeatherDetails(props) {
 
   if (unit === "metric") {
     return (
-      <div className="WeatherDetails row mt-3">
-        <div className="col-6">
-          <WeatherIcon data={props.data} />
-          <span className="temperature">{props.data.temp}</span>
-          <span className="temp-unit">
-            °C |{" "}
-            <a href="#" onClick={showFahr}>
-              °F
-            </a>
-          </span>
+      <div className="WeatherDetails">
+        <div className="row mt-1 g-0">
+          <div className="info ms-2 col">
+            <h1>{props.data.city}</h1>
+            <ul>
+              <li>
+                <TimeLine date={props.data.date} />
+              </li>
+              <li className="text-capitalize">{props.data.descr}</li>
+            </ul>
+          </div>
+          <div className="current ps-3 pe-2 py-2 col-7">
+            <div className="temp-line mt-2 mb-3">
+              <WeatherIcon data={props.data} />
+              <span className="temperature">{props.data.temp}°</span>
+              <span className="temp-unit">
+                <span className="left" id="active">
+                  C
+                </span>
+                <a href="#" onClick={showFahr} className="right">
+                  F
+                </a>
+              </span>
+            </div>
+            <ul>
+              <li>Feels like: {props.data.feelsLike}°C</li>
+              <li>Humidity: {props.data.humid}%</li>
+              <li>Wind: {props.data.wind} km/h</li>
+            </ul>
+          </div>
         </div>
-        <div className="col-6">
-          <ul>
-            <li>Feels like: {props.data.feelsLike}°C</li>
-            <li>Humidity: {props.data.humid}%</li>
-            <li>Wind: {props.data.wind} km/h</li>
-          </ul>
-        </div>
-        <div className="row">
-          <Forecast data={props.data} units={unit} />
-        </div>
+        <Forecast data={props.data} units={unit} />
       </div>
     );
   } else {
     return (
       <div className="WeatherDetails">
-        <row className="mt-3 row">
-          <div className="col-6">
-            <WeatherIcon data={props.data} />
-            <span className="temperature">{convert(props.data.temp)}</span>
-            <span className="temp-unit">
-              <a href="#" onClick={showCels}>
-                °C
-              </a>{" "}
-              | °F
-            </span>
+        <div className="row mt-1 g-0">
+          <div className="info ms-2 col">
+            <h1>{props.data.city}</h1>
+            <ul>
+              <li>
+                <TimeLine date={props.data.date} />
+              </li>
+              <li className="text-capitalize">{props.data.descr}</li>
+            </ul>
           </div>
-          <div className="col-6">
+          <div className="current ps-3 pe-2 py-2 col-7">
+            <div className="temp-line mt-2 mb-3">
+              <WeatherIcon data={props.data} />
+              <span className="temperature">{convert(props.data.temp)}°</span>
+              <span className="temp-unit">
+                <span className="left" id="active">
+                  F
+                </span>
+                <a href="#" onClick={showCels} className="right">
+                  C
+                </a>
+              </span>
+            </div>
             <ul>
               <li>Feels like: {convert(props.data.feelsLike)}°F</li>
               <li>Humidity: {props.data.humid}%</li>
               <li>Wind: {props.data.wind} km/h</li>
             </ul>
           </div>
-        </row>
+        </div>
         <Forecast data={props.data} units={unit} />
       </div>
     );
