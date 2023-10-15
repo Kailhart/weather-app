@@ -27,8 +27,8 @@ export default function WeatherDetails(props) {
   if (unit === "metric") {
     return (
       <div className="WeatherDetails">
-        <div className="row mt-1 g-0">
-          <div className="info ms-2 col">
+        <div className="row g-0">
+          <div className="info m-1 col">
             <h1>{props.data.city}</h1>
             <ul>
               <li>
@@ -37,11 +37,9 @@ export default function WeatherDetails(props) {
               <li className="text-capitalize">{props.data.descr}</li>
             </ul>
           </div>
-          <div className="current ps-3 pe-2 py-2 col-7">
-            <div className="temp-line mt-2 mb-3">
-              <span className="d-none d-sm-inline">
-                <WeatherIcon data={props.data} />
-              </span>
+          <div className="current col-sm-7 m-1 pb-2">
+            <div className="temp-line mt-2 mb-2">
+              <WeatherIcon data={props.data} />
               <span className="temperature">{props.data.temp}°</span>
               <span className="temp-unit">
                 <span className="left" id="active">
@@ -65,8 +63,8 @@ export default function WeatherDetails(props) {
   } else {
     return (
       <div className="WeatherDetails">
-        <div className="row mt-1 g-0">
-          <div className="info ms-2 col">
+        <div className="row g-0">
+          <div className="info m-1 col">
             <h1>{props.data.city}</h1>
             <ul>
               <li>
@@ -75,11 +73,9 @@ export default function WeatherDetails(props) {
               <li className="text-capitalize">{props.data.descr}</li>
             </ul>
           </div>
-          <div className="current ps-3 pe-2 py-2 col-7">
-            <div className="temp-line mt-2 mb-3">
-              <span className="d-none d-sm-inline">
-                <WeatherIcon data={props.data} />
-              </span>
+          <div className="current col-sm-7 m-1 pb-2">
+            <div className="temp-line mt-2 mb-2">
+              <WeatherIcon data={props.data} />
               <span className="temperature">{convert(props.data.temp)}°</span>
               <span className="temp-unit">
                 <span className="left" id="active">
@@ -91,7 +87,7 @@ export default function WeatherDetails(props) {
               </span>
             </div>
             <ul>
-              <li>Feels like: {convert(props.data.feelsLike)}°F</li>
+              <li>Feels like: {convert(props.data.feelsLike)}°C</li>
               <li>Humidity: {props.data.humid}%</li>
               <li>Wind: {props.data.wind} km/h</li>
             </ul>
