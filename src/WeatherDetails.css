@@ -40,25 +40,26 @@
   padding: 8px 10px;
 }
 
+.WeatherDetails .temp-unit span {
+  background-color: var(--light-color);
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
 .WeatherDetails .temp-unit #active {
   background-color: var(--shade-color);
   color: var(--prime-color);
   transition: all 200ms ease-in-out;
 }
 
-.WeatherDetails .temp-unit a {
-  background-color: var(--light-color);
-  color: #fff;
-  text-decoration: none;
-  transition: all 300ms ease-in-out;
+.WeatherDetails .temp-unit:hover span {
+  background-color: var(--shade-color);
+  color: var(--prime-color);
 }
 
 .WeatherDetails .temp-unit:hover #active {
   background-color: var(--light-color);
   color: #fff;
-}
-
-.WeatherDetails .temp-unit:hover a {
-  background-color: var(--shade-color);
-  color: var(--prime-color);
 }

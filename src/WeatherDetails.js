@@ -45,9 +45,9 @@ export default function WeatherDetails(props) {
                 <span className="left" id="active">
                   C
                 </span>
-                <a href="#" onClick={showFahr} className="right">
+                <span onClick={showFahr} className="right">
                   F
-                </a>
+                </span>
               </span>
             </div>
             <ul>
@@ -81,9 +81,9 @@ export default function WeatherDetails(props) {
                 <span className="left" id="active">
                   F
                 </span>
-                <a href="#" onClick={showCels} className="right">
+                <span onClick={showCels} className="right">
                   C
-                </a>
+                </span>
               </span>
             </div>
             <ul>
