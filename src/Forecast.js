@@ -27,12 +27,7 @@ export default function Forecast(props) {
     });
   }
 
-  if (props.data.ready && forecastData.ready === false) {
-    let apiKey = "42c1087f21a779atb0e02f0o78c49337";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
-    return null;
-  } else {
+  if (forecastData.ready) {
     if (units === "metric") {
       return (
         <div className="Forecast col mt-3">
@@ -52,5 +47,10 @@ export default function Forecast(props) {
         </div>
       );
     }
+  } else {
+    let apiKey = "42c1087f21a779atb0e02f0o78c49337";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+    return null;
   }
 }
