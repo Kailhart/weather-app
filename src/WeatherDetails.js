@@ -39,7 +39,9 @@ export default function WeatherDetails(props) {
           </div>
           <div className="current ps-3 pe-2 py-2 col-7">
             <div className="temp-line mt-2 mb-3">
-              <WeatherIcon data={props.data} />
+              <span className="d-none d-sm-inline">
+                <WeatherIcon data={props.data} />
+              </span>
               <span className="temperature">{props.data.temp}°</span>
               <span className="temp-unit">
                 <span className="left" id="active">
@@ -75,7 +77,9 @@ export default function WeatherDetails(props) {
           </div>
           <div className="current ps-3 pe-2 py-2 col-7">
             <div className="temp-line mt-2 mb-3">
-              <WeatherIcon data={props.data} />
+              <span className="d-none d-sm-inline">
+                <WeatherIcon data={props.data} />
+              </span>
               <span className="temperature">{convert(props.data.temp)}°</span>
               <span className="temp-unit">
                 <span className="left" id="active">
