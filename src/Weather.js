@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Weather.css";
-import Info from "./Info";
+import TimeLine from "./TimeLine";
 import WeatherDetails from "./WeatherDetails";
 
 export default function Weather() {
@@ -62,7 +62,13 @@ export default function Weather() {
             </div>
           </div>
         </form>
-        <Info data={weatherData} />
+        <h1>{weatherData.city}</h1>
+        <ul>
+          <li>
+            <TimeLine date={weatherData.date} />
+          </li>
+          <li className="text-capitalize">{weatherData.descr}</li>
+        </ul>
         <WeatherDetails data={weatherData} />
       </div>
     );
