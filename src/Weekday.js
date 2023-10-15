@@ -15,8 +15,8 @@ export default function Weekday(props) {
 
   return (
     <div className="Weekday">
-      <h3>{weekday}</h3>
-      <p className="date">
+      <h3 className="m-0">{weekday}</h3>
+      <p className="date m-1">
         {date}.{month}
       </p>
     </div>
