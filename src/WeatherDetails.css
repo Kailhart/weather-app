@@ -63,3 +63,13 @@
   background-color: var(--light-color);
   color: #fff;
 }
+
+@media (max-width: 576px) {
+  .WeatherDetails .temp-line {
+    text-align: center;
+  }
+
+  .WeatherDetails .current ul {
+    text-align: center;
+  }
+}
