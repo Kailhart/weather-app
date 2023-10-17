@@ -41,6 +41,9 @@ export default function Forecast(props) {
               return null;
             }
           })}
+          <div className="col d-sm-none">
+            <ForecastDay data={forecastData[5]} units={props.units} />
+          </div>
         </div>
       </div>
     );
